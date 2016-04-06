@@ -1,0 +1,1 @@
+FROM quay.io/ukhomeofficedigital/centos-base
