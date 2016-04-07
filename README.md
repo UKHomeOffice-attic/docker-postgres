@@ -5,6 +5,14 @@ base docker image with postgres
 
 This docker container is intended to be built upon in projects requiring Postgres.
 
+### Configuration
+In your Dockerfile you can overwrite the default configuration by copying a file to /conf/postgres.conf
+
+For example:
+COPY postgresql.conf /conf/postgresql.con
+
+The entrypoint will automatically copy this to the postgres configuration directory after the db has been initialized
+
 ## Contributing
 
 Feel free to submit pull requests and issues. If it's a particularly large PR, you may wish to

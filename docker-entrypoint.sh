@@ -92,6 +92,10 @@ if [ "$1" = 'postgres' ]; then
 		echo
 	fi
 
+    custom_config="/conf/postgresql.conf"
+    if [ -e $custom_config ]
+        then cp $custom_config "$PGDATA"/postgresql.conf
+    fi
 	exec gosu postgres "$@"
 fi
 

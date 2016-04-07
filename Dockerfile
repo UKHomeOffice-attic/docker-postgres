@@ -28,6 +28,7 @@ RUN mkdir -p /var/run/postgresql && chown -R postgres /var/run/postgresql
 ENV PGDATA /var/lib/postgresql/data
 ENV PATH /usr/pgsql-9.5/bin:$PATH
 
+COPY postgresql.conf /conf/postgresql.conf
 COPY docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
