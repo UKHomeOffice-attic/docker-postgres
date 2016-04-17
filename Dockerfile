@@ -30,6 +30,7 @@ ENV PATH /usr/pgsql-9.5/bin:$PATH
 
 COPY postgresql.conf /conf/postgresql.conf
 COPY docker-entrypoint.sh /
+COPY healthcheck.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 EXPOSE 5432

@@ -13,6 +13,13 @@ COPY postgresql.conf /conf/postgresql.con
 
 The entrypoint will automatically copy this to the postgres configuration directory after the db has been initialized
 
+### Useful File Locations
+
+* `/docker-entrypoint-initdb.d/*.sql[.gz]` - Any SQL file in that
+  location will be loaded into the database on container init.
+* `/healthcheck.sh` - You can execute this file to check the health of
+  the postgres installation. It performs `SELECT 1+1` on the database.
+
 ## Contributing
 
 Feel free to submit pull requests and issues. If it's a particularly large PR, you may wish to
