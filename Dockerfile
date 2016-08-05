@@ -1,4 +1,4 @@
-FROM quay.io/ukhomeofficedigital/centos-base
+FROM quay.io/ukhomeofficedigital/centos-base:latest
 
 # explicitly set user/group IDs
 RUN groupadd -r postgres --gid=1001 && useradd -r -g postgres --uid=1001 postgres
