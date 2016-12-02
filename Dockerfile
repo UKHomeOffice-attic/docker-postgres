@@ -1,5 +1,8 @@
 FROM quay.io/ukhomeofficedigital/centos-base:latest
 
+RUN localedef -i en_GB -c -f UTF-8 -A /usr/share/locale/locale.alias en_GB.UTF-8
+ENV LANG en_GB.utf8
+
 # explicitly set user/group IDs
 RUN groupadd -r postgres --gid=1001 && useradd -r -g postgres --uid=1001 postgres
 RUN mkdir /home/postgres
